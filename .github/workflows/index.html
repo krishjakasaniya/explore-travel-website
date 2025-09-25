@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Website</title>
+<link rel="icon" href="https://placehold.co/32x32/14b8a6/white?text=✈️" type="image/png">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+fontFamily: {
+sans: ['Inter', 'sans-serif'],
+},
+colors: {
+'primary': '#14b8a6',
+'secondary': '#0f766e',
+'dark': '#1f2937',
+},
+}
+}
+}
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+html {
+scroll-behavior: smooth;
+}
+.hero-bg {
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1740&auto=format&fit=crop');
+background-size: cover;
+background-position: center;
+}
+.about-bg {
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1542036242-b88304919d7d?q=80&w=1742&auto=format&fit=crop');
+background-size: cover;
+background-position: center;
+}
+.contact-bg {
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1517760444937-f2031730a84e?q=80&w=1742&auto=format&fit=crop');
+background-size: cover;
+background-position: center;
+}
+/* Simple animations */
+.fade-in {
+animation: fadeIn 1.5s ease-in-out;
+}
+.slide-in-left {
+animation: slideInLeft 1s ease-out;
+}
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+@keyframes slideInLeft {
+from { transform: translateX(-100px); opacity: 0; }
+to { transform: translateX(0); opacity: 1; }
+}
+.hover-lift:hover {
+transform: translateY(-8px);
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+</style>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+
+<!-- Navigation Bar -->
+<nav class="bg-white shadow-lg fixed w-full z-50">
+<div class="container mx-auto px-6 py-3 flex justify-between items-center">
+<a href="#home" class="text-2xl font-bold text-gray-800 transition-colors duration-300 hover:text-primary">
+Explore.co
+</a>
+<div class="hidden md:flex space-x-6">
+<a href="#home" class="text-gray-600 hover:text-primary transition-colors duration-300">Home</a>
+<a href="#about" class="text-gray-600 hover:text-primary transition-colors duration-300">About</a>
+<a href="#contact" class="text-gray-600 hover:text-primary transition-colors duration-300">Contact</a>
+</div>
+<div class="md:hidden">
+<button id="menu-btn" class="text-gray-600 focus:outline-none">
+<i class="fas fa-bars text-xl"></i>
+</button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-white">
+<a href="#home" class="block py-2 px-6 text-gray-600 hover:bg-gray-100">Home</a>
+<a href="#about" class="block py-2 px-6 text-gray-600 hover:bg-gray-100">About</a>
+<a href="#contact" class="block py-2 px-6 text-gray-600 hover:bg-gray-100">Contact</a>
+</div>
+</nav>
+
+<main class="pt-16">
+
+<!-- Home Page Section -->
+<section id="home" class="relative h-screen flex items-center justify-center text-center text-white hero-bg">
+<div class="absolute inset-0 bg-black opacity-50"></div>
+<div class="relative z-10 px-4 slide-in-left">
+<h1 class="text-4xl md:text-6xl font-extrabold mb-4 animate-pulse">Your Next Adventure Awaits</h1>
+<p class="text-lg md:text-xl font-light mb-8">Discover breathtaking destinations and create unforgettable memories.</p>
+<a href="#about" class="bg-primary text-white py-3 px-8 rounded-full font-semibold hover:bg-secondary transition-colors duration-300">Learn More</a>
+</div>
+</section>
+
+<!-- Featured Destinations Section (Home Page) -->
+<section class="py-20 bg-gray-100">
+<div class="container mx-auto px-6 text-center">
+<h2 class="text-3xl md:text-4xl font-bold text-dark mb-12 fade-in">Featured Destinations</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Destination 1 -->
+<article class="bg-white p-6 rounded-2xl shadow-lg hover-lift transition-transform duration-300 fade-in">
+<img src="https://www.nationalparks.org/uploads/_1200x630_crop_center-center_82_none/shutterstock_97706066_1.jpg?mtime=1655840475" alt="The Grand Canyon" class="w-full h-48 object-cover rounded-xl mb-4">
+<h3 class="text-xl font-bold text-dark mb-2">The Grand Canyon</h3>
+<p class="text-gray-600">Explore one of the world's most breathtaking natural wonders.</p>
+</article>
+<!-- Destination 2 -->
+<article class="bg-white p-6 rounded-2xl shadow-lg hover-lift transition-transform duration-300 fade-in delay-200">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhsvFFFYpairJt-3BB955xX_FujaMur6FAEQ&s" alt="Kyoto, Japan" class="w-full h-48 object-cover rounded-xl mb-4">
+<h3 class="text-xl font-bold text-dark mb-2">Kyoto, Japan</h3>
+<p class="text-gray-600">Immerse yourself in the rich history and culture of ancient Japan.</p>
+</article>
+<!-- Destination 3 -->
+<article class="bg-white p-6 rounded-2xl shadow-lg hover-lift transition-transform duration-300 fade-in delay-500">
+<img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGFyaXMlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" alt="Paris, France" class="w-full h-48 object-cover rounded-xl mb-4">
+<h3 class="text-xl font-bold text-dark mb-2">Paris, France</h3>
+<p class="text-gray-600">Experience the romance and art of the City of Light.</p>
+</article>
+</div>
+</div>
+</section>
+
+<!-- About Page Section -->
+<section id="about" class="py-20 about-bg bg-fixed bg-no-repeat relative text-white">
+<div class="absolute inset-0 bg-black opacity-60"></div>
+<div class="container mx-auto px-6 relative z-10">
+<h2 class="text-4xl md:text-5xl font-bold text-center mb-10 slide-in-left">About Us</h2>
+<div class="max-w-4xl mx-auto text-center fade-in">
+<p class="text-lg leading-relaxed mb-8">
+Explore.co was founded on the belief that travel is more than just a trip—it's a journey of self-discovery and a way to connect with the world. We are dedicated to providing you with the inspiration and resources to make your travel dreams a reality.
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 text-center">
+<!-- Mission Section -->
+<div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-blur-sm fade-in delay-200">
+<i class="fas fa-bullseye text-4xl text-primary mb-4"></i>
+<h3 class="text-2xl font-semibold mb-2">Our Mission</h3>
+<p class="text-gray-200">To inspire and enable people to explore the world, one unique destination at a time.</p>
+</div>
+<!-- Vision Section -->
+<div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-blur-sm fade-in delay-400">
+<i class="fas fa-binoculars text-4xl text-primary mb-4"></i>
+<h3 class="text-2xl font-semibold mb-2">Our Vision</h3>
+<p class="text-gray-200">To be the most trusted resource for travel enthusiasts seeking authentic experiences.</p>
+</div>
+<!-- Why Choose Us Section -->
+<div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-blur-sm fade-in delay-600">
+<i class="fas fa-check-circle text-4xl text-primary mb-4"></i>
+<h3 class="text-2xl font-semibold mb-2">Why Choose Us</h3>
+<p class="text-gray-200">We offer curated guides, local insights, and a passion for travel that shines through in everything we do.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Contact Page Section -->
+<section id="contact" class="py-20 contact-bg bg-fixed bg-no-repeat relative text-white">
+<div class="absolute inset-0 bg-black opacity-60"></div>
+<div class="container mx-auto px-6 relative z-10">
+<h2 class="text-4xl md:text-5xl font-bold text-center mb-10 fade-in">Contact Us</h2>
+<div class="max-w-xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-lg text-gray-800 backdrop-blur-sm fade-in">
+<form class="space-y-6">
+<div>
+<label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+<input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary p-2 transition-all duration-300" required>
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+<input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary p-2 transition-all duration-300" required>
+</div>
+<div>
+<label for="gender" class="block text-sm font-medium text-gray-700">Gender</label>
+<select id="gender" name="gender" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary p-2 transition-all duration-300">
+<option value="" disabled selected>Select your gender</option>
+<option value="male">Male</option>
+<option value="female">Female</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div>
+<label for="country" class="block text-sm font-medium text-gray-700">Country</label>
+<input type="text" id="country" name="country" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary p-2 transition-all duration-300" required>
+</div>
+<div>
+<label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+<textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary p-2 transition-all duration-300"></textarea>
+</div>
+<button type="submit" class="w-full bg-primary text-white py-3 px-4 rounded-md font-semibold hover:bg-secondary transition-colors duration-300">Submit</button>
+</form>
+
+<div class="mt-10 text-center text-gray-700">
+<h3 class="text-xl font-semibold mb-4">Or Connect with Us Directly</h3>
+<ul class="space-y-2">
+<li><i class="fas fa-envelope text-primary mr-2"></i> <span class="font-bold">Email:</span> contact@explore.co</li>
+<li><i class="fas fa-phone text-primary mr-2"></i> <span class="font-bold">Phone:</span> +123 456 7890 (optional)</li>
+</ul>
+<div class="flex justify-center space-x-6 mt-6">
+<a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300"><i class="fab fa-instagram text-2xl"></i></a>
+<a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300"><i class="fab fa-facebook text-2xl"></i></a>
+<a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300"><i class="fab fa-linkedin text-2xl"></i></a>
+<a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300"><i class="fab fa-twitter text-2xl"></i></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8 text-center">
+<div class="container mx-auto px-6">
+<p>&copy; 2025 Explore.co. All rights reserved.</p>
+</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+menuBtn.addEventListener('click', () => {
+mobileMenu.classList.toggle('hidden');
+});
+});
+</script>
+</body>
+</html>
